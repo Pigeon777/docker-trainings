@@ -1,0 +1,14 @@
+version: "3"
+services:
+  mariadb1:
+    image: mariadb
+    container_name: mariadb1
+    volumes:
+      - mariadb_storage:/var/lib/mysql
+      - ./:/data/folder/in/container
+      - /full/path:/mountpoint/in/container
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
+volumes:
+  mariadb_storage:
